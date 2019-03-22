@@ -1,0 +1,9 @@
+{
+  "name": "my-vue",
+  "version": "1.0.0",
+  "description": "a vue app",
+  "main": "main.js",
+  "repository": "git@github.com:zzsscc/vue-family.git",
+  "author": "zsc",
+  "license": "MIT"
+}
