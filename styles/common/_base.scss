@@ -1,0 +1,70 @@
+// 友盟埋点
+a[title='站长统计'] {
+  color: transparent !important;
+  display: inline-block;
+  font-size: 0 !important;
+  visibility: hidden;
+  position: absolute;
+  line-height:0 !important;
+  overflow: hidden !important;
+}
+
+/*retina屏一像素边框*/
+.bd-1px {
+  position: relative;
+}
+.bd-1px:before {
+  display: block;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  -webkit-transform: scale(1);
+  transform: scale(1);
+}
+/*底边边框*/
+.bdb-1px:before {
+  border-bottom: 1px solid #e5e5e5;
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 2) {
+  .bd-1px:before{
+    transform: scale(0.5);
+    -webkit-transform: scale(0.5);
+    top: -50%;
+    left: -50%;
+    right: -50%;
+    bottom: -50%;
+  }
+}
+/*右边边框*/
+.bdr-1px:before {
+  border-right: 1px solid #e5e5e5;
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 2) {
+  .bdr-1px:before{
+    -webkit-transform: scale(0.5);
+    transform: scale(0.5);
+  }
+}
+/*左边边框*/
+.bdl-1px:before {
+  border-left: 1px solid #e5e5e5;
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 2) {
+  .bdl-1px:before{
+    -webkit-transform: scale(0.5);
+    transform: scale(0.5);
+  }
+}
+/*顶部边框*/
+.bdt-1px:before {
+  border-top: 1px solid #e5e5e5;
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 2) {
+  .bdt-1px:before {
+    -webkit-transform: scale(0.5);
+    transform: scale(0.5);
+  }
+}

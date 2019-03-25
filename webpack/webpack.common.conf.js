@@ -26,7 +26,8 @@ module.exports = {
       vue$: 'vue/dist/vue.esm.js',
       configs: `${srcRoot('configs')}`,
       utils: `${srcRoot('utils')}`,
-      views: `${srcRoot('views')}`
+      views: `${srcRoot('views')}`,
+      styles: `${srcRoot('styles')}`
     }
   },
   module: {
