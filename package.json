@@ -5,5 +5,66 @@
   "main": "main.js",
   "repository": "git@github.com:zzsscc/vue-family.git",
   "author": "zsc",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "start": "npm run dev",
+    "dev": "webpack-dev-server --env.NODE_ENV=dev --inline --progress --config bin/server.js",
+    "prod": "webpack --env.NODE_ENV=production --mode production",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Decorator",
+    "javascrpt"
+  ],
+  "bugs": {
+    "url": "https://github.com/zzsscc/vue-family/issues"
+  },
+  "homepage": "https://github.com/zzsscc/vue-family#readme",
+  "dependencies": {
+    "@babel/core": "^7.4.0",
+    "@babel/runtime": "^7.4.2",
+    "babel-loader": "^8.0.5",
+    "babel-preset-vue": "^2.0.2",
+    "babel-register": "^6.26.0",
+    "better-npm-run": "^0.1.1",
+    "core-js": "^3.0.0",
+    "uglifyjs-webpack-plugin": "^2.1.2",
+    "vue": "^2.6.10"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/plugin-proposal-class-properties": "^7.4.0",
+    "@babel/plugin-proposal-decorators": "^7.4.0",
+    "@babel/plugin-transform-runtime": "^7.4.0",
+    "@babel/preset-env": "^7.4.2",
+    "@babel/runtime-corejs2": "^7.4.2",
+    "babel-eslint": "^10.0.1",
+    "clean-webpack-plugin": "^2.0.1",
+    "copy-webpack-plugin": "^5.0.1",
+    "css-loader": "^2.1.1",
+    "csv-loader": "^3.0.2",
+    "eslint": "^5.15.3",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-import-resolver-webpack": "^0.11.0",
+    "eslint-plugin-babel": "^5.3.0",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-vue": "^5.2.2",
+    "file-loader": "^3.0.1",
+    "friendly-errors-webpack-plugin": "^1.7.0",
+    "html-webpack-plugin": "^3.2.0",
+    "less": "^3.9.0",
+    "less-loader": "^4.1.0",
+    "os": "^0.1.1",
+    "portfinder": "^1.0.20",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.1",
+    "url-loader": "^1.1.2",
+    "vue-loader": "^15.7.0",
+    "vue-template-compiler": "^2.6.10",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.3.0",
+    "webpack-dev-server": "^3.2.1",
+    "webpack-merge": "^4.2.1",
+    "xml-loader": "^1.2.1"
+  }
 }
