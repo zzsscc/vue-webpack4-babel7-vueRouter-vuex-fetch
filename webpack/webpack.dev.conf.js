@@ -2,11 +2,21 @@ const path = require('path');
 const webpack = require('webpack');
 const merge = require('webpack-merge');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssTextPlugin = require('mini-css-extract-plugin')
 const configs = require('../configs');
 const common = require('./webpack.common.conf');
+const utils = require('./utils')
 
 module.exports = merge(common, {
   mode: 'development',
+  module: {
+    rules: utils.styleLoaders({ 
+      hotReload: true, 
+      extract: true, 
+      sourceMap: true, 
+      usePostCSS: true 
+    })
+  },
   devtool: 'inline-source-map',     // 使用 source map，追踪错误和警告位置  // prod 使用source-map
   devServer: {
     clientLogLevel: 'warning',
@@ -35,6 +45,9 @@ module.exports = merge(common, {
       filename: 'index.html',
       template: 'index.html',
       inject: true
-    })
+    }),
+    new MiniCssTextPlugin({
+      filename: utils.assetsPath('[name].css')
+    }),
   ]
 });

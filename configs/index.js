@@ -45,5 +45,6 @@ module.exports = {
   port: getPort(),
   host: getHost(),
   autoOpenBrowser: true,
-  assetsPublicPath: '/'
+  assetsPublicPath: '/',
+  assetsSubDirectory: 'static'
 }

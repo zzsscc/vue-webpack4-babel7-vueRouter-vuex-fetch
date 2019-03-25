@@ -52,58 +52,61 @@ module.exports = {
       
       },
       // 加载样式文件 style-loader  css-loader  sass-loader
-      {
-        test: /\.css$/,
-        use: [
-          'style-loader',
-          {
-            loader: "css-loader",
-            options: {
-                modules: true,
-                importLoaders: 1,
-                sourceMap: true
-            }
-          },
-        ]
-      },
-      {
-        test: /\.scss$/,
-        use: [
-          'style-loader',
-          {
-            loader: "css-loader",
-            options: {
-                modules: true,
-                importLoaders: 1,
-                sourceMap: true
-            }
-          },
-          'postcss-loader',
-          'sass-loader?outputStyle=expanded'
-        ]
-      },
-      {
-        test: /\.less$/,
-        use: [
-          'style-loader',
-          {
-            loader: "css-loader",
-            options: {
-                modules: true,
-                importLoaders: 1,
-                sourceMap: true
-            }
-          },
-          'postcss-loader',
-          {
-            loader: 'less-loader',
-            options: {
-              outputStyle: 'expanded',
-              sourceMap: false
-            }
-          }
-        ]
-      },
+      // {
+      //   test: /\.css$/,
+      //   use: [
+      //     'vue-style-loader',
+      //     'style-loader',
+      //     {
+      //       loader: "css-loader",
+      //       options: {
+      //           modules: true,
+      //           importLoaders: 1,
+      //           sourceMap: true
+      //       }
+      //     },
+      //   ]
+      // },
+      // {
+      //   test: /\.scss$/,
+      //   use: [
+      //     'vue-style-loader',
+      //     'style-loader',
+      //     {
+      //       loader: "css-loader",
+      //       options: {
+      //           modules: true,
+      //           importLoaders: 1,
+      //           sourceMap: true
+      //       }
+      //     },
+      //     'postcss-loader',
+      //     'sass-loader?outputStyle=expanded'
+      //   ]
+      // },
+      // {
+      //   test: /\.less$/,
+      //   use: [
+      //     'vue-style-loader',
+      //     'style-loader',
+      //     {
+      //       loader: "css-loader",
+      //       options: {
+      //           modules: true,
+      //           importLoaders: 1,
+      //           sourceMap: true
+      //       }
+      //     },
+      //     'postcss-loader',
+      //     {
+      //       loader: 'less-loader',
+      //       options: {
+      //         outputStyle: 'expanded',
+      //         sourceMap: false
+      //       }
+      //     }
+      //   ]
+      // },
       // 加载图片 file-loader url-loader
       {
         test: /\.(png|svg|jpg|gif)$/,

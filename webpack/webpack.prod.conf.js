@@ -6,6 +6,14 @@ const merge = require('webpack-merge');
 const common = require('./webpack.common.conf');
 
 module.exports = merge(common, {
+  module: {
+    rules: utils.styleLoaders({
+      hotReload: false, 
+      extract: true, 
+      sourceMap: false, 
+      usePostCSS: true 
+    })
+  },
   devtool: 'source-map',     // 使用 source map，追踪错误和警告位置  // prod 使用source-map
   plugins: [
     new UglifyJsPlugin({
