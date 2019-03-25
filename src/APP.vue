@@ -15,5 +15,5 @@
   };
 </script>
 
-<style lang="less">
+<style lang="scss" scoped>
 </style>

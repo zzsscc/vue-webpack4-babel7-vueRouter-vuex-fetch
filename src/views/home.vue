@@ -1,18 +1,14 @@
 <template>
-  <div class="color">
-    1234
+  <div>
+    home
   </div>
 </template>
 
 <script>
   export default {
-    name: 'test'
+    name: 'home'
   };
 </script>
 
 <style lang="scss" scoped>
-$color: red;
-.color {
-  color: $color
-}
 </style>

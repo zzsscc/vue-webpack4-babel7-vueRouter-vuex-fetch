@@ -6,10 +6,6 @@ const VueLoaderPlugin = require('vue-loader/lib/plugin');
 const config = require('../configs');
 const { srcRoot, rootNode } = require('../configs/helpers/path');
 
-function resolve(dir) {
-  return dir ? `${path.resolve(__dirname)}/src/${dir}` : `${path.resolve(__dirname)}`;
-}
-
 module.exports = {
   entry: // 入口文件
     // `${srcRoot('index.js')}`,
@@ -38,7 +34,15 @@ module.exports = {
       // 加载vue文件
       {
         test: /\.vue$/,
-        loader: 'vue-loader'
+        loader: 'vue-loader',
+        options: {
+          transformAssetUrls: {
+            video: ['src', 'poster'],
+            source: 'src',
+            img: 'src',
+            image: 'xlink:href'
+          }
+        }
       },
       // use babel es6 > es5。(UglifyJsPlugin, 不能压缩es6的代码文件。我们把es6的代码用babel转换成es5即可)
       {
@@ -52,14 +56,29 @@ module.exports = {
         test: /\.css$/,
         use: [
           'style-loader',
-          'css-loader?importLoaders=2'
+          {
+            loader: "css-loader",
+            options: {
+                modules: true,
+                importLoaders: 1,
+                sourceMap: true
+            }
+          },
         ]
       },
       {
         test: /\.scss$/,
         use: [
           'style-loader',
-          'css-loader?importLoaders=2',
+          {
+            loader: "css-loader",
+            options: {
+                modules: true,
+                importLoaders: 1,
+                sourceMap: true
+            }
+          },
+          'postcss-loader',
           'sass-loader?outputStyle=expanded'
         ]
       },
@@ -67,7 +86,14 @@ module.exports = {
         test: /\.less$/,
         use: [
           'style-loader',
-          'css-loader?importLoaders=2',
+          {
+            loader: "css-loader",
+            options: {
+                modules: true,
+                importLoaders: 1,
+                sourceMap: true
+            }
+          },
           'postcss-loader',
           {
             loader: 'less-loader',
