@@ -22,7 +22,7 @@ module.exports = {
     require('postcss-url'),
     require('precss'),
     require('postcss-for'),
-    require('postcss-browser-reporter')
+    require('postcss-browser-reporter'),
     require('postcss-cssnext')({ browsers:['Android >= 4.0', 'ios >= 6', 'last 2 versions'] })
   ]
 };

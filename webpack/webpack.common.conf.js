@@ -4,7 +4,7 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
 const config = require('../configs');
-const { srcRoot, rootNode, src } = require('../configs/helpers/path');
+const { srcRoot, rootNode, resolve } = require('../configs/helpers/path');
 
 module.exports = {
   entry: // 入口文件
@@ -24,7 +24,8 @@ module.exports = {
     extensions: ['.vue', '.js', '.jsx', 'less', 'scss', 'css', '.json'],
     alias: {
       'vue$': 'vue/dist/vue.esm.js',
-      '@': src(),
+      '@': resolve('src'),
+      'src': path.resolve(__dirname, '../src'),
       'configs': `${srcRoot('configs')}`,
       'utils': `${srcRoot('utils')}`,
       'views': `${srcRoot('views')}`,

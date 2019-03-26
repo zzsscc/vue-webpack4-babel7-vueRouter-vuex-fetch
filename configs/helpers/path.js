@@ -12,7 +12,5 @@ module.exports = {
   rootNode(args) {
     return path.join(ROOT, args);
   },
-  src() {
-    return resolve('src');
-  }
+  resolve
 }
