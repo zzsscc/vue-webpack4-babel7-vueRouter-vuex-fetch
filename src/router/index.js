@@ -10,9 +10,31 @@ export default [
     filePath: 'views/home/index'
   },
   {
+    path: '/redirect-path',
+    name: 'redirect-path',
+    filePath: 'views/home/index',
+    redirect: { path: '/test-alias' }
+  },
+  {
+    path: '/redirect-name',
+    name: 'redirect-name',
+    filePath: 'views/home/index',
+    redirect: { name: 'redirect-path' }
+  },
+  {
+    path: '/redirect-fun',
+    name: 'redirect-fun',
+    filePath: 'views/home/index',
+    redirect: to => {
+      // console.log(to)   to：这个路由本身
+      return '/redirect-name'
+    }
+  },
+  {
     path: '/test',
     name: 'test',
-    filePath: 'views/test'
+    filePath: 'views/test',
+    alias: '/test-alias'
   },
   {
     path: '/example/:id?',

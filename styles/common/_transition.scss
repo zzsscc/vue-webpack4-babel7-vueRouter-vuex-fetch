@@ -22,3 +22,13 @@
 .slide-right-enter /* .v-leave-active below version 2.1.8 */ {
   transform: translateX(-100%);
 }
+
+.bounce-enter-active,
+.bounce-leave-active {
+    transition: all .3s ease-in-out;
+}
+
+.bounce-enter,
+.bounce-leave-to {
+    transform: translateY(100%);
+}
