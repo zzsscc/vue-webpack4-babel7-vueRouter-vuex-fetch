@@ -1,11 +1,11 @@
-const path = require('path');
-const webpack = require('webpack');
-const merge = require('webpack-merge');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const path = require('path')
+const webpack = require('webpack')
+const merge = require('webpack-merge')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssTextPlugin = require('mini-css-extract-plugin')
-const configs = require('../configs');
-const common = require('./webpack.common.conf');
-const utils = require('./utils');
+const configs = require('../configs')
+const common = require('./webpack.common.conf')
+const utils = require('./utils')
 
 module.exports = merge(common, {
   mode: 'development',
@@ -45,9 +45,6 @@ module.exports = merge(common, {
       filename: 'index.html',
       template: 'index.html',
       inject: true
-    }),
-    new MiniCssTextPlugin({
-      filename: utils.assetsPath('[name].css')
-    }),
+    })
   ]
-});
+})

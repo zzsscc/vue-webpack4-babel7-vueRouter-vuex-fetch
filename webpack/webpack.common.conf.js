@@ -1,10 +1,12 @@
-const webpack = require('webpack');
-const path = require('path');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
-const VueLoaderPlugin = require('vue-loader/lib/plugin');
-const config = require('../configs');
-const { srcRoot, rootNode, resolve } = require('../configs/helpers/path');
+const webpack = require('webpack')
+const path = require('path')
+const CleanWebpackPlugin = require('clean-webpack-plugin')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
+const VueLoaderPlugin = require('vue-loader/lib/plugin')
+const MiniCssTextPlugin = require('mini-css-extract-plugin')
+const config = require('../configs')
+const { srcRoot, rootNode, resolve } = require('../configs/helpers/path')
+const utils = require('./utils')
 
 module.exports = {
   entry: // 入口文件
@@ -154,7 +156,10 @@ module.exports = {
         ignore: ['.*']
       }
     ]),
+    new MiniCssTextPlugin({
+      filename: utils.assetsPath('[name].css')
+    }),
     // 请确保引入这个插件！
     new VueLoaderPlugin()
   ]
-};
+}
