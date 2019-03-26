@@ -5,7 +5,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssTextPlugin = require('mini-css-extract-plugin')
 const configs = require('../configs');
 const common = require('./webpack.common.conf');
-const utils = require('./utils')
+const utils = require('./utils');
 
 module.exports = merge(common, {
   mode: 'development',
@@ -30,7 +30,7 @@ module.exports = merge(common, {
     compress: true,
     host: configs.host,
     port: configs.port,
-    open: configs.autoOpenBrowser,
+    open: false, /* configs.autoOpenBrowser */
     overlay: { warnings: false, errors: true },
     publicPath: configs.assetsPublicPath,
     quiet: true, // necessary for FriendlyErrorsPlugin

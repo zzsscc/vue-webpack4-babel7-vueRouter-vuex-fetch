@@ -2,6 +2,7 @@ const portfinder = require('portfinder');
 const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin');
 const config = require('../configs');
 const devWebpackConfig = require('../webpack/webpack.dev.conf');
+const utils = require('../webpack/utils');
 
 module.exports = new Promise((resolve, reject) => {
   portfinder.basePort = process.env.PORT || config.port
@@ -19,7 +20,7 @@ module.exports = new Promise((resolve, reject) => {
         compilationSuccessInfo: {
           messages: [`Your application is running here: http://${devWebpackConfig.devServer.host}:${port}`],
         },
-        // onErrors: utils.createNotifierCallback()
+        onErrors: utils.createNotifierCallback()
       }))
 
       resolve(devWebpackConfig)

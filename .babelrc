@@ -2,11 +2,14 @@
   "presets": [
     "vue",
     ["@babel/preset-env", {
-      "debug": false,
+      "modules": false,
+      "debug": true,
       "useBuiltIns": "usage"
     }]
   ],
   "plugins": [
+    "@babel/plugin-transform-runtime",
+    "@babel/plugin-syntax-dynamic-import",
     "@babel/proposal-class-properties",
     [
       "@babel/plugin-proposal-decorators",
