@@ -12,12 +12,13 @@
     name: 'example',
     data() {
       return {
-        id: this.$route.params.id
+        // id: this.$route.params.id
       }
     },
+    props: ['id'],
     mounted() {
-      console.log(this.id)
-      console.log(this.$route)
+      console.log('params id', this.$route.params.id)
+      console.log('props id', this.id)
     },
     methods: {
       toDetail() {

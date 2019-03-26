@@ -40,6 +40,7 @@ export default [
     path: '/example/:id?',
     name: 'example',
     filePath: 'views/example/index',
+    props: true,  // 在组件中也可以使用props: ['id']获取定义，this.id即可使用。同时this.$route.params.id获取依然有效
     children: [
       {
         path: 'detail/:detailId?',   // 子路由params参数命名detailId不能和父级params参数命名id相同，不然无法在自路由中取得上级路由对应的params参数

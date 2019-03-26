@@ -8,13 +8,14 @@ function lazyLoad(path) {
 const routes = (function initRouter(route) {
   let result = []
   route.forEach(r => {
-    const { name, path, filePath, redirect, meta, alias, children } = r
+    const { name, path, filePath, redirect, meta, alias, props = false, children } = r
     let item = {
       name,
       redirect,
       meta,
       path,
-      alias
+      alias,
+      props
     }
     item.component = lazyLoad(filePath)
     // 如有children递归
