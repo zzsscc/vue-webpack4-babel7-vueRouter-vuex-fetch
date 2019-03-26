@@ -1,12 +1,19 @@
 <template>
   <div id="app">
-    <router-view></router-view>
+    <transition :name="transitionName">
+      <router-view></router-view>
+    </transition>
   </div>
 </template>
 
 <script>
   export default {
     name: 'app',
+    data() {
+      return {
+        transitionName: null
+      }
+    },
     created() {
       document.querySelector('body').style.margin = 0;
     }

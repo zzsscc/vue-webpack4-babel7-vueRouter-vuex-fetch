@@ -1,4 +1,3 @@
-import Vue from 'vue'
 import Router from 'vue-router'
 import routersData from 'router'
 
@@ -10,12 +9,14 @@ const routes = (function initRouter(route) {
   let result = []
   route.forEach(r => {
     const { name, path, filePath, redirect, meta, children } = r
-    let item = {}
-    item.name = name
+    let item = {
+      name,
+      redirect,
+      meta,
+      path
+    }
     item.component = lazyLoad(filePath)
-    item.redirect = redirect
-    item.meta = meta
-    item.path = path
+    // 如有children递归
     if (children) {
       item.children = initRouter(children)
     }
@@ -23,24 +24,30 @@ const routes = (function initRouter(route) {
   })
   return result
 })(routersData)
-console.log(routes)
-
-Vue.use(Router)
 
 const router = new Router({
   mode: 'hash',
   scrollBehavior(to, from, savedPosition) {
     if (savedPosition) {
-        return savedPosition;
+      return savedPosition
     } else {
-        return {
-            x: 0,
-            y: 0
-        };
+      return {
+        x: 0,
+        y: 0
+      }
     }
-},
+  },
   routes
 })
+
+router.beforeEach((to, from, next) => {
+  console.log('beforeEach', to, from)
+  const toDepth = to.path.split('/').length
+  const fromDepth = from.path.split('/').length
+  toDepth < fromDepth ? console.log('slide-right') : console.log('slide-left')
+  next()
+})
+
 console.log(router)
 
 export default router

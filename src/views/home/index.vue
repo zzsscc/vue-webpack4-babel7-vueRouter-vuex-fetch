@@ -1,12 +1,17 @@
 <template>
-  <div>
+  <div @click="toExample">
     home
   </div>
 </template>
 
 <script>
   export default {
-    name: 'home'
+    name: 'home',
+    methods: {
+      toExample() {
+        this.$router.push({ name: 'example' })
+      }
+    }
   };
 </script>
 

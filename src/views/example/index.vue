@@ -21,12 +21,10 @@
     },
     methods: {
       toDetail() {
-        const { path } = this.$route
-        this.$router.push({ path: `/example/${this.id}/detail/${100}` })
+        this.$router.push({ path: `/example${this.id ? `/${this.id}` : ''}/detail/${100}` })
       },
       toList() {
-        const { path } = this.$route
-        this.$router.push({ path: `/example/${this.id}/list` })
+        this.$router.push({ path: `/example${this.id ? `/${this.id}` : ''}/list` })
       }
     }
   };
