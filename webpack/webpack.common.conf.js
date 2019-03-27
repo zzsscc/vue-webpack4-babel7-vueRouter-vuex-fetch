@@ -32,7 +32,8 @@ module.exports = {
       'utils': `${srcRoot('utils')}`,
       'views': `${srcRoot('views')}`,
       'styles': `${srcRoot('styles')}`,
-      'router': `${srcRoot('router')}`
+      'router': `${srcRoot('router')}`,
+      'store': `${srcRoot('store')}`
     }
   },
   module: {

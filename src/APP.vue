@@ -15,9 +15,9 @@
       }
     },
     created() {
-      document.querySelector('body').style.margin = 0;
+      document.querySelector('body').style.margin = 0
     }
-  };
+  }
 </script>
 
 <style lang="scss" scoped>

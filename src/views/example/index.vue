@@ -28,7 +28,7 @@
         this.$router.push({ path: `/example${this.id ? `/${this.id}` : ''}/list` })
       }
     }
-  };
+  }
 </script>
 
 <style lang="scss" scoped>

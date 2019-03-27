@@ -8,7 +8,7 @@
 <script>
   export default {
     name: 'test'
-  };
+  }
 </script>
 
 <style lang="scss" scoped>
