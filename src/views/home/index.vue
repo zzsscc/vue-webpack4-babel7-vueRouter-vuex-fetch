@@ -68,10 +68,10 @@
       ]),
       // 在方法中使用被mapMutations映射的方法
       mapMutationsToAdd() {
-        this[ADDCOUNT_MUTATION]()
+        this[ADDCOUNT_MUTATION]() // this[ADDCOUNT_MUTATION]() => this.$store.commit(ADDCOUNT_MUTATION)
       },
       mapMutationsToPush() {
-        this[PUSHDATA_MUTATION]({ data: [21, 22] })
+        this[PUSHDATA_MUTATION]({ data: [21, 22] }) // this[PUSHDATA_MUTATION]({ data: [21, 22] }) => this.$store.commit(PUSHDATA_MUTATION, { data: [21, 22] })
       }
     }
   }

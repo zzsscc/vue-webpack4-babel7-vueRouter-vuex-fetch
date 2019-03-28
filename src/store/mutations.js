@@ -5,7 +5,8 @@ import {
 
 export default {
   /**
-   * @description: Mutation
+   * Mutation
+   * @description: all of Mutations is sync
    * @param state 状态树
    * @param {object} params 参数
    * @success: {string}
