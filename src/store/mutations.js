@@ -1,6 +1,7 @@
 import {
   ADDCOUNT_MUTATION,
-  PUSHDATA_MUTATION
+  PUSHDATA_MUTATION,
+  CHANGECONFIG_MUTATION
 } from './mutation-types'
 
 export default {
@@ -27,5 +28,8 @@ export default {
     const { data } = params
     const { c } = state.data
     state.data.c = [...c, ...data] // 不能使用c = [...c, ...data]的方式赋值，实际state并未改变
+  },
+  [CHANGECONFIG_MUTATION](state, params = {}) {
+    state.config = { ...state.config, ...params }
   }
 }

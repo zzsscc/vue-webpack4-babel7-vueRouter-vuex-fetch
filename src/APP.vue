@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="app" :style="{ backgroundColor: config.global && config.bgc }">
     <transition :name="transitionName">
       <router-view></router-view>
     </transition>
@@ -7,12 +7,18 @@
 </template>
 
 <script>
+  import { mapState } from 'vuex'
   export default {
     name: 'app',
     data() {
       return {
         transitionName: null
       }
+    },
+    computed: {
+      ...mapState([
+        'config'
+      ])
     },
     created() {
       document.querySelector('body').style.margin = 0
