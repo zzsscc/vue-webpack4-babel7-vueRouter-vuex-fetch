@@ -1,6 +1,15 @@
+// 发起请求的方法
+import { fetchHandle } from 'utils/fetch'
+
+// api list
+import {
+  testApi
+} from 'api/test'
+
 import {
   TEST_ACTION,
-  FETCHCONFIG_ACTION
+  ASYNCCHANGECONFIG_ACTION,
+  FETCHGETTEST_ACTION
 } from './action-types'
 
 import {
@@ -31,8 +40,11 @@ export default {
       }, 1500)
     })
   },
-  async [FETCHCONFIG_ACTION]({ state, getters, commit, dispatch, rootState, rootGetters }, params) {
+  async [ASYNCCHANGECONFIG_ACTION]({ state, getters, commit, dispatch, rootState, rootGetters }, params) {
     await setTimeout(() => {}, 1000)
     commit(CHANGECONFIG_MUTATION, params)
+  },
+  async [FETCHGETTEST_ACTION]({ state, getters, commit, dispatch, rootState, rootGetters }, params) {
+    const res = await fetchHandle(testApi, params)
   }
 }

@@ -5,5 +5,8 @@
 // test
 export const TEST_ACTION = 'test'
 
-// fetch config
-export const FETCHCONFIG_ACTION = 'fetchConfig'
+// async change config
+export const ASYNCCHANGECONFIG_ACTION = 'asyncChangeConfig'
+
+// fetch get test
+export const FETCHGETTEST_ACTION = 'fetchGetTest'

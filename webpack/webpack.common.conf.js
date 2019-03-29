@@ -33,7 +33,8 @@ module.exports = {
       'views': `${srcRoot('views')}`,
       'styles': `${srcRoot('styles')}`,
       'router': `${srcRoot('router')}`,
-      'store': `${srcRoot('store')}`
+      'store': `${srcRoot('store')}`,
+      'api': `${srcRoot('api')}`
     }
   },
   module: {

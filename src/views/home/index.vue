@@ -26,7 +26,7 @@
   } from 'store/mutation-types'
   import {
     TEST_ACTION,
-    FETCHCONFIG_ACTION
+    ASYNCCHANGECONFIG_ACTION
   } from 'store/action-types'
 
   export default {
@@ -107,11 +107,11 @@
       },
       // 使用mapActions[]映射将store的action映射到本地this.方法
       ...mapActions([
-        FETCHCONFIG_ACTION
+        ASYNCCHANGECONFIG_ACTION
       ]),
       // 在本地方法中使用被mapActions映射的方法
       handleFetchConfigAction() {
-        this[FETCHCONFIG_ACTION]({ global: true })
+        this[ASYNCCHANGECONFIG_ACTION]({ global: true })
       }
     }
   }
