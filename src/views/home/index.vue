@@ -11,9 +11,10 @@
     <p @click="handleToPush">></p>
     <p @click="mapMutationsToAdd">mapMutations + default</p>
     <p @click="mapMutationsToPush">mapMutations ></p>
-    <p @click="handleAction">action</p>
-    <p @click="handleAction2">action2</p>
-    <p @click="handleFetchConfigAction">fetchConfigAction</p>
+    <p @click="handleTestAction">testAction</p>
+    <p @click="handleTestAction2">testAction2</p>
+    <p @click="handleAsyncChangeConfigAction">asyncChangeConfigAction</p>
+    <p @click="handleFetchGetTestApiAction">fetchGetTestApiAction</p>
   </div>
 </template>
 
@@ -26,7 +27,8 @@
   } from 'store/mutation-types'
   import {
     TEST_ACTION,
-    ASYNCCHANGECONFIG_ACTION
+    ASYNCCHANGECONFIG_ACTION,
+    FETCHGETTESTAPI_ACTION
   } from 'store/action-types'
 
   export default {
@@ -63,7 +65,7 @@
     },
     methods: {
       toExample() {
-        this.$router.push({ name: 'example' })
+        this.$router.push({ name: 'example', params: { id: this.count } })
       },
       // 直接使用store.commit调用store.mutation注册的方法
       handleToAdd() {
@@ -94,11 +96,11 @@
         handleMapMutationsFetchConfig: CHANGECONFIG_MUTATION // this.handleMapMutationsFetchConfig({ ... }) => this.$store.commit(CHANGECONFIG_MUTATION, { ... })
       }),
       // action
-      async handleAction() {
+      async handleTestAction() {
         // dispatch以载荷形式风格提交, action方法名以第一个参数传入，自定义参数作为第二个参数以对象的形式传入
         await this.$store.dispatch(TEST_ACTION, { count: 4 })
       },
-      async handleAction2() {
+      async handleTestAction2() {
         // dispatch以对象风格提交，action方法名以对象type字段传入，自定义参数作为对象的其他字段传入
         await this.$store.dispatch({
           type: TEST_ACTION,
@@ -107,11 +109,15 @@
       },
       // 使用mapActions[]映射将store的action映射到本地this.方法
       ...mapActions([
-        ASYNCCHANGECONFIG_ACTION
+        ASYNCCHANGECONFIG_ACTION,
+        FETCHGETTESTAPI_ACTION
       ]),
       // 在本地方法中使用被mapActions映射的方法
-      handleFetchConfigAction() {
+      handleAsyncChangeConfigAction() {
         this[ASYNCCHANGECONFIG_ACTION]({ global: true })
+      },
+      handleFetchGetTestApiAction() {
+        this[FETCHGETTESTAPI_ACTION]({})
       }
     }
   }

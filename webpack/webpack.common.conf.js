@@ -34,7 +34,9 @@ module.exports = {
       'styles': `${srcRoot('styles')}`,
       'router': `${srcRoot('router')}`,
       'store': `${srcRoot('store')}`,
-      'api': `${srcRoot('api')}`
+      'api': `${srcRoot('api')}`,
+      'sprites': resolve('static/sprites'),
+      'images': resolve('static/images'),
     }
   },
   module: {
@@ -123,7 +125,7 @@ module.exports = {
             loader: 'url-loader',
             options: {
               outputPath: 'img/',    // 在output中的publicPath路径中的路径
-              limit: 8192     // 小于8129字节的被转为baes64引入，大于8129字节的正常打包在指定的路径下
+              limit: 10240     // 小于10240字节的被转为baes64引入，大于10240字节的正常打包在指定的路径下
             }
           }
         ]

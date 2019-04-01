@@ -15,7 +15,7 @@ const fetchJSON = (url, params) => {
     },
   }
   // eslint-disable-next-line no-param-reassign
-  url = `/api${url}`
+  url = `${url}`   // url = `/api${url}` 如果团队约定好有固定前缀可以在这里加上前缀，省去重复write
   return fetch(url, params)
 }
 

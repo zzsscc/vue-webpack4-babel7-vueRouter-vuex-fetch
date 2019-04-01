@@ -4,12 +4,12 @@ import { fetchHandle } from 'utils/fetch'
 // api list
 import {
   testApi
-} from 'api/test'
+} from 'api/home'
 
 import {
   TEST_ACTION,
   ASYNCCHANGECONFIG_ACTION,
-  FETCHGETTEST_ACTION
+  FETCHGETTESTAPI_ACTION
 } from './action-types'
 
 import {
@@ -44,7 +44,7 @@ export default {
     await setTimeout(() => {}, 1000)
     commit(CHANGECONFIG_MUTATION, params)
   },
-  async [FETCHGETTEST_ACTION]({ state, getters, commit, dispatch, rootState, rootGetters }, params) {
+  async [FETCHGETTESTAPI_ACTION]({ state, getters, commit, dispatch, rootState, rootGetters }, params) {
     const res = await fetchHandle(testApi, params)
   }
 }

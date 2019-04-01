@@ -9,4 +9,4 @@ export const TEST_ACTION = 'test'
 export const ASYNCCHANGECONFIG_ACTION = 'asyncChangeConfig'
 
 // fetch get test
-export const FETCHGETTEST_ACTION = 'fetchGetTest'
+export const FETCHGETTESTAPI_ACTION = 'fetchGetTestApi'
