@@ -63,6 +63,9 @@
     created() {
       console.log(this.$store)
     },
+    destroyed() {
+      console.log('destroyed', this);
+    },
     methods: {
       toExample() {
         this.$router.push({ name: 'example', params: { id: this.count } })
