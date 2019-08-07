@@ -41,10 +41,38 @@ function getHost() {
   }[ENV]
 }
 
+function getServerHost() {
+  return {
+    dev: `${localIp()[0]}`,
+    development: '0.0.0.0',
+    aliyunqa: '0.0.0.0',
+    aliyunqa1: '0.0.0.0',
+    aliyunqa2: '0.0.0.0',
+    aliyunqa3: '0.0.0.0',
+    pre: '0.0.0.0',
+    production: '0.0.0.0',
+  }[ENV]
+}
+
+function getServerPort() {
+  return {
+    dev: 9093,
+    development: 9093,
+    aliyunqa: 9093,
+    aliyunqa1: 9093,
+    aliyunqa2: 9093,
+    aliyunqa3: 9093,
+    pre: 9093,
+    production: 9093
+  }[ENV]
+}
+
 module.exports = {
   port: getPort(),
   host: getHost(),
   autoOpenBrowser: true,
   assetsPublicPath: '/',
-  assetsSubDirectory: 'static'
+  assetsSubDirectory: 'static',
+  serverHost: getServerHost(),
+  serverPort: getServerPort()
 }

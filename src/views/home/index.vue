@@ -119,8 +119,9 @@
       handleAsyncChangeConfigAction() {
         this[ASYNCCHANGECONFIG_ACTION]({ global: true })
       },
-      handleFetchGetTestApiAction() {
-        this[FETCHGETTESTAPI_ACTION]({})
+      async handleFetchGetTestApiAction() {
+        const res = await this[FETCHGETTESTAPI_ACTION]({});
+        console.log('res', res)
       }
     }
   }

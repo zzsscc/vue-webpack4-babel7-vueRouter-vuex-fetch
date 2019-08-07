@@ -45,6 +45,6 @@ export default {
     commit(CHANGECONFIG_MUTATION, params)
   },
   async [FETCHGETTESTAPI_ACTION]({ state, getters, commit, dispatch, rootState, rootGetters }, params) {
-    const res = await fetchHandle(testApi, params)
+    return await fetchHandle(testApi, params)
   }
 }

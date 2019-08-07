@@ -28,7 +28,7 @@ module.exports = {
       'vue$': 'vue/dist/vue.esm.js',
       '@': resolve('src'),
       'src': path.resolve(__dirname, '../src'),
-      'configs': `${srcRoot('configs')}`,
+      'configs': path.resolve(__dirname, '../configs'),
       'utils': `${srcRoot('utils')}`,
       'views': `${srcRoot('views')}`,
       'styles': `${srcRoot('styles')}`,
@@ -58,8 +58,7 @@ module.exports = {
       {
         test: /\.js$/,
         loader: 'babel-loader',
-        exclude: /node_modules/,
-      
+        exclude: /node_modules/
       },
       // 加载样式文件 style-loader  css-loader  sass-loader
       // {

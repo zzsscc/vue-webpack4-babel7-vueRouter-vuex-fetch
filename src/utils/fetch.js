@@ -15,7 +15,8 @@ const checkHttpStatus = async resp => {
    *  状态429对应的statusText是Too many request
    */
   const respText = await resp.text()
-  const error = new Error(resp.statusText);
+  const error = new Error(resp.statusText)
+  error.specResp = respText
   throw error
 }
 
@@ -57,6 +58,7 @@ const checkRespResult = async resp => {
 }
 
 const catchHttpError = err => {
+  console.log(err);
   // 如果是捕获到这个错误，说明用户请求发生异常
   if (err.message === 'Failed to fetch') {
     const error = new Error('您的网络异常，请确认网络连接情况')

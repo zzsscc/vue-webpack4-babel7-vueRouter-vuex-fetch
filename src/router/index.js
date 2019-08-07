@@ -10,6 +10,11 @@ export default [
     filePath: 'views/home/index'
   },
   {
+    path: '/home',
+    name: 'home',
+    filePath: 'views/home/index'
+  },
+  {
     path: '/redirect-path',
     name: 'redirect-path',
     filePath: 'views/home/index',
