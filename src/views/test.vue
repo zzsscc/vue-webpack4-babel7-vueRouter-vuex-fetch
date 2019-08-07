@@ -2,12 +2,19 @@
   <div class="color">
     1234
     <a href="http://www.baidu.com">123</a>
+    <img class="image" :src="header" alt="">
   </div>
 </template>
 
 <script>
+  import header from 'images/header.png'
   export default {
-    name: 'test'
+    name: 'test',
+    data() {
+      return {
+        header
+      }
+    }
   }
 </script>
 
@@ -17,5 +24,9 @@
 $color: red;
 .color {
   color: $color
+}
+.image {
+  display: block;
+  width: 100px;
 }
 </style>

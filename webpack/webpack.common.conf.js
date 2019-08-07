@@ -35,8 +35,8 @@ module.exports = {
       'router': `${srcRoot('router')}`,
       'store': `${srcRoot('store')}`,
       'api': `${srcRoot('api')}`,
-      'sprites': resolve('static/sprites'),
-      'images': resolve('static/images'),
+      'sprites': `${srcRoot('static/sprites')}`,
+      'images': `${srcRoot('static/images')}`,
     }
   },
   module: {
